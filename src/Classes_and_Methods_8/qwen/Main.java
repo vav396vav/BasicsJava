@@ -1,6 +1,7 @@
 package Classes_and_Methods_8.qwen;
 
-import ClassesAndMethods_8_1.qwen.model.Car;
+
+import Classes_and_Methods_8.qwen.model.Car;
 
 public class Main {
     public static void main(String[] args) {
