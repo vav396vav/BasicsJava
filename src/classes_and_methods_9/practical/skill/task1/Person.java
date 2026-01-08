@@ -1,4 +1,4 @@
-package classes_and_methods_9.practical.skill;
+package classes_and_methods_9.practical.skill.task1;
 
 public class Person {
     private String name;
