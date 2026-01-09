@@ -1,5 +1,7 @@
 package Final.addressbook.console;
 
+import Final.addressbook.service.AddressBook;
+
 import java.util.Scanner;
 
 public class MenuNavigator {
@@ -12,7 +14,7 @@ public class MenuNavigator {
             if (scanner.hasNextInt()) {
                 int choice = scanner.nextInt();
                 switch (choice) {
-                    case 1 -> System.out.println("Добавление контакта");
+//                    case 1 -> AddressBook.addContact();
                     case 2 -> System.out.println("Удаление контакта");
                     case 3 -> System.out.println("Просмотр всех контактов");
                     case 4 -> {
