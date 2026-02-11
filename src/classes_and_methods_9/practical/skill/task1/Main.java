@@ -11,8 +11,8 @@ public class Main {
                 person2.toString() +
                 person1.equals(person2));
 
-        System.out.println(person1 + " и " + person2 +
-                " — один и тот же? " + person1.equals(person2));
+        System.out.println(person1 + " и " + person3 +
+                " — один и тот же? " + person1.equals(person3));
 
         System.out.println(person1.hashCode());
         System.out.println(person3.hashCode());

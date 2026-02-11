@@ -3,28 +3,20 @@ package Final.addressbook.model;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.time.LocalDate;
-import java.util.Objects;
-
 @Setter
 @Getter
 public class Contact {
-    private String lastName;
-    private String firstName;
-    private String middleName;
+    private String fullName;
     private String position;
-    private LocalDate birthDate;
-    private int phoneNumber;
+    private String birthDate;
+    private String phoneNumber;
     private String email;
 
-    public Contact(String lastName, String firstName, String middleName, String position,
-                   LocalDate birthDate, int phoneNumber, String email) {
-        if (lastName == null || firstName == null || middleName == null) {
+    public Contact(String fullName, String position, String birthDate, String phoneNumber, String email) {
+        if (fullName == null || fullName.isEmpty()) {
             throw new IllegalArgumentException("Имя не может быть пустым");
         }
-        this.lastName = lastName;
-        this.firstName = firstName;
-        this.middleName = middleName;
+        this.fullName = fullName.trim();
         this.position = position;
         this.birthDate = birthDate;
         this.phoneNumber = phoneNumber;
@@ -34,15 +26,12 @@ public class Contact {
 
     @Override
     public String toString() {
-        return "Contact{" +
-                "lastName='" + lastName + '\'' +
-                ", firstName='" + firstName + '\'' +
-                ", middleName='" + middleName + '\'' +
-                ", position='" + position + '\'' +
-                ", birthDate=" + birthDate +
-                ", phoneNumber=" + phoneNumber +
-                ", email='" + email + '\'' +
-                '}';
+        return "ID: " + "\n" +
+                "Ф. И. О.: " + fullName + "\n" +
+                "Должность: " + position + "\n" +
+                "Дата рождения: " + birthDate + "\n" +
+                "Номер телефона: " + phoneNumber + "\n" +
+                "Адрес электронной почты: " + email;
     }
 
     @Override
@@ -51,16 +40,7 @@ public class Contact {
         if (o == null || getClass() != o.getClass()) return false;
 
         Contact contact = (Contact) o;
-        return  Objects.equals(lastName, contact.lastName) &&
-                Objects.equals(firstName, contact.firstName) &&
-                Objects.equals(middleName, contact.middleName);
+        return  fullName.equalsIgnoreCase(contact.fullName);
     }
 
-    @Override
-    public int hashCode() {
-        int result = Objects.hashCode(lastName);
-        result = 31 * result + Objects.hashCode(firstName);
-        result = 31 * result + Objects.hashCode(middleName);
-        return result;
-    }
 }
