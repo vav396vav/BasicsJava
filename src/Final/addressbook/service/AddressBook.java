@@ -14,6 +14,7 @@ public class AddressBook {
         this.contacts = new Contact[MAX_CONTACTS];
         this.size = 0;
         this.scanner = new Scanner(System.in);
+
     }
 
     public void addContact() {
